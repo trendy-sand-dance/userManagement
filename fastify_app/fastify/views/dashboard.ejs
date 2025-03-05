@@ -12,6 +12,9 @@
     <header>
 		<h1>Dashboard</h1>
 	</header>
+	<% if (flashMess && flashMess.length > 0) { %>
+		<p><%= flashMess[0] %></p>
+	<% } %>
       <div class="div-register">
         <% if (userTable && userTable.length > 0) { %>
           <ul class="posts">
