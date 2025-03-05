@@ -1,4 +1,4 @@
-export function registerUser(request, reply) {
+export async function registerUser(request, reply) {
 	const { name, email, username, password } = request.body;
 	if (!name || !email || !username || !password) {
 		return reply.send({error: "All fields are required"});
@@ -19,7 +19,6 @@ export function registerUser(request, reply) {
 		const result = stmt.run(name, email, username, password);
 		console.log("New user created: " + username);
 		return reply.send({ message: `New user added: ${username}`, id: result.lastInsertRowid });
-		//return reply.view("register", { title: "Register" });
 	}
 	catch (err) {
 		console.log(err);

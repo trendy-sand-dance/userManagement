@@ -1,4 +1,4 @@
-export function dbChecker(request, reply)  {
+export async function dbChecker(request, reply)  {
 
 	const db = request.server.db;
 	const query = `SELECT * FROM userTable`;

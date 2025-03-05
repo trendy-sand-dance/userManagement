@@ -22,7 +22,7 @@ const PORT = 3000;
 const HOST = '0.0.0.0';
 
 app.register(dbConnector);
-console.log("database connected and registered");
+console.log("Database connected and registered");
 app.register(formbody);
 app.register(routes);
 

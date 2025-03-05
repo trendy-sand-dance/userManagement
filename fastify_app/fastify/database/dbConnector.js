@@ -8,6 +8,7 @@ const databasePath = path.join(import.meta.dirname, "/database.db");
 
 // -----------------------------------------------//
 // build new database table if not already exists
+// create database object whether db exists already or not, to use in controller functions
 // -----------------------------------------------//
 async function dbConnector(fastify, options) {
 	let db;
