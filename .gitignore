@@ -1,0 +1,52 @@
+## Ignore all
+#*
+
+#Unignore Dockerfile
+!Dockerfile
+
+# Unignore Makefile
+!Makefile
+
+# Unignore all dirs
+!*/
+
+# Unignore all with extensions
+!*.*
+
+# Ignore object files
+*.o
+*.obj
+
+# Ignore libraries
+*.lib
+*.a
+
+# Ignore executables
+*.exe
+*.out
+
+# Ignore Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Ignore VScode
+*.vscode
+.vscode
+
+# Ignore DS_Store
+**/.DS_Store
+
+# Ignore `bin` dir
+bin/
+*/bin/*
+
+# Ignore env
+.env
+
+# Ignore logs
+logs/*
+
+# Unignore logs directory
+!logs/.gitkeep
