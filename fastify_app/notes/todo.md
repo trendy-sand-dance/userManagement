@@ -13,6 +13,7 @@
 	and the main messages for clients like db connection error/http error pages...
 10) check this: id: result.lastInsertRowid
 	i need to check this but i think naturally when a new element is added to the db table, the id increments, so to get that id number we can use something like the above
+11) after login,  pass user to dashboard for user specific dash
 
 
 **team**
