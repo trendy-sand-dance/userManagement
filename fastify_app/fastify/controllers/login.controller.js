@@ -21,7 +21,7 @@ export async function getLogin(request, reply) {
 };
 
 
-{/*<div class="div-register">
+/*<div class="div-register">
 	<h2>Login</h2>
 	<form action="/dashboard" method="post">
 	<label for="username">Username:</label>
@@ -30,4 +30,4 @@ export async function getLogin(request, reply) {
 	<input type="password" id="password" name="password" required />
 	<input type="submit" value="Login">
 	</form>
-	</div>*/}
+	</div>*/

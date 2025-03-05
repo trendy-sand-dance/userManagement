@@ -13,8 +13,6 @@ run:
 stop:
 	docker-compose stop
 
-again: clean build run
-
 status:
 	docker-compose ps -a
 

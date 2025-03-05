@@ -2,6 +2,7 @@
 import fastify from 'fastify';
 import routes from "./routes/routes.js";
 import formbody from "@fastify/formbody";
+import favicon from 'fastify-favicon'
 
 // view and EJS stuff
 import path from "node:path";
@@ -25,6 +26,7 @@ app.register(dbConnector);
 console.log("Database connected and registered");
 app.register(formbody);
 app.register(routes);
+app.register(favicon);
 
 app.register(fastifyView, {
 	engine: {
@@ -35,8 +37,8 @@ app.register(fastifyView, {
 });
 
 app.register(fastifyStatic, {
-	root: path.join(__dirname, "public-css"),
-	prefix: "/public-css",
+	root: path.join(__dirname, "public"),
+	prefix: "/public",
 });
 
 // run the server
