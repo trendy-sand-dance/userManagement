@@ -31,4 +31,4 @@ clean:
 
 re: clean all
 
-.PHONY: all build run stop start again status logs cleanDB clean re
+.PHONY: all build run stop status logs cleanDB clean re
