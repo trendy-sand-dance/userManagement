@@ -14,12 +14,16 @@ export async function editUser(request, reply) {
 			console.error("Database is not initialized");
 			return reply.send({ error: "Database connection error" });
 		}
-
-		const stmt = db.prepare("UPDATE userTable SET username = ?, password = ? WHERE username = ? AND password = ?");
-		const result = stmt.run(newUsername, newPassword, username, password);
-		if (result.changes > 0) {
-			console.log("User edited: " + username);
-			return reply.send({ message: `User successfully edited from: ${username} to: ${newUsername}` });
+		const stmt = db.prepare('SELECT * FROM userTable WHERE username = ? AND password = ?');
+		const user = stmt.get(username, password);
+		if (user)
+		{
+			const stmt = db.prepare("UPDATE userTable SET username = ?, password = ? WHERE username = ? AND password = ?");
+			const result = stmt.run(newUsername, newPassword, username, password);
+			if (result.changes > 0) {
+				console.log("User edited: " + username);
+				return reply.send({ message: `User successfully edited from: ${username} to: ${newUsername}` });
+			}
 		}
 		else {
 			return reply.send({ error: "No matching user found or no changes made" });
