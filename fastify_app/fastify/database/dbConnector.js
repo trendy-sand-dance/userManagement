@@ -27,7 +27,7 @@ async function dbConnector(fastify, options) {
 				name STRING NOT NULL,
 				username STRING NOT NULL UNIQUE,
 				password STRING NOT NULL,
-				email STRING UNIQUE
+				email STRING NOT NULL UNIQUE
 			)
 		`;
 
