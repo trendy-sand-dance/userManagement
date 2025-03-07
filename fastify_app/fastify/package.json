@@ -1,11 +1,11 @@
 {
   "name": "fastify-app",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "server.ts",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon -L server.js"
+    "start": "node server.ts",
+    "dev": "nodemon -L server.ts"
   },
   "keywords": [],
   "author": "",

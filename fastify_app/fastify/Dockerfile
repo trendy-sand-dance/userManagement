@@ -5,6 +5,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 RUN npm install && npm install -g nodemon \
+	&& npm install -g typescript \
 	&& npm install better-sqlite3 \
 	&& npm install @fastify/formbody \
 	&& npm install fastify-favicon \
