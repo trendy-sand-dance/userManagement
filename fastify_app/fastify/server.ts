@@ -4,7 +4,7 @@ import routes from './routes/routes.ts';
 import formbody from '@fastify/formbody';
 import dbConnector from "./database/dbConnector.ts";
 import fastifyStatic from "@fastify/static";
-import favicon from 'fastify-favicon'
+//import favicon from 'fastify-favicon'
 // view and EJS stuff
 import path from 'node:path';
 import fastifyView from '@fastify/view';
@@ -25,7 +25,7 @@ app.register(dbConnector);
 console.log("Database connected and registered");
 app.register(formbody);
 app.register(routes);
-app.register(favicon);
+//app.register(favicon);
 
 app.register(fastifyStatic, {
 	root: path.join(__dirname, "public"),

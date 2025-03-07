@@ -1,19 +1,19 @@
 // pages
-import {getRoot} from "../controllers/pages/root.controller.js";
-import {getLoginPage} from "../controllers/pages/loginPage.controller.js";
-import {getDashboard} from "../controllers/pages/dashboard.controller.js";
-import {getRegisterPage} from "../controllers/pages/registerPage.controller.js";
-import {getDeletePage} from "../controllers/pages/deletePage.controller.js";
-import {getEditPage} from "../controllers/pages/editUserPage.controller.js";
+import {getRoot} from "../controllers/pages/root.controller.ts";
+import {getLoginPage} from "../controllers/pages/loginPage.controller.ts";
+import {getDashboard} from "../controllers/pages/dashboard.controller.ts";
+import {getRegisterPage} from "../controllers/pages/registerPage.controller.ts";
+import {getDeletePage} from "../controllers/pages/deletePage.controller.ts";
+import {getEditPage} from "../controllers/pages/editUserPage.controller.ts";
 
 // controls
-import {loginUser} from "../controllers/controls/login.controller.js";
-import {registerUser} from "../controllers/controls/register.controller.js";
-import {deleteUser} from "../controllers/controls/delete.controller.js";
-import {editUser} from "../controllers/controls/editUser.controller.js";
+import {loginUser} from "../controllers/controls/login.controller.ts";
+import {registerUser} from "../controllers/controls/register.controller.ts";
+import {deleteUser} from "../controllers/controls/delete.controller.ts";
+import {editUser} from "../controllers/controls/editUser.controller.ts";
 
 // utils
-import {dbChecker} from "../database/dbChecker.js";
+import {dbChecker} from "../database/dbChecker.ts";
 
 async function routes(fastify, options) {
 	// get
