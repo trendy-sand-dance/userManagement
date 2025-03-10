@@ -1,8 +1,8 @@
 // imports
 import fastify from 'fastify';
-import routes from './routes/routes.ts';
+import routes from './routes/routes.js';
 import formbody from '@fastify/formbody';
-import dbConnector from "./database/dbConnector.ts";
+import dbConnector from "./database/dbConnector.js";
 import fastifyStatic from "@fastify/static";
 //import favicon from 'fastify-favicon'
 // view and EJS stuff
