@@ -8,6 +8,6 @@ services:
     volumes:
       - ./fastify/src:/app/src
       - ./fastify/conf:/app/conf
-      - /app/node_modules # prevent overwriting node_modules
+      - /app/conf/node_modules
     working_dir: /app
     command: ["npm", "run", "dev"]
