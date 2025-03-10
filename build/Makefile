@@ -5,7 +5,7 @@ DB_FILE = ./fastify/src/database/database.db
 all: build run
 
 build:
-	docker-compose build
+	docker-compose build --no-cache
 
 run:
 	docker-compose up -d
@@ -17,7 +17,7 @@ status:
 	docker-compose ps -a
 
 logs:
-	docker-compose logs
+	docker-compose logs -f
 
 # will delete the whole database and it's contents
 cleanDB:
@@ -26,6 +26,7 @@ cleanDB:
 	fi
 
 clean:
+	@docker-compose down --volumes
 	@docker stop $$(docker ps -qa) || true
 	@docker rm $$(docker ps -qa) || true
 
