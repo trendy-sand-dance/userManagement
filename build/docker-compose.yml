@@ -6,7 +6,8 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./fastify:/app # local project folder into container
+      - ./fastify/src:/app/src
+      - ./fastify/conf:/app/conf
       - /app/node_modules # prevent overwriting node_modules
     working_dir: /app
-    command: npm run dev # run with hot reload
+    command: ["npm", "run", "dev"]

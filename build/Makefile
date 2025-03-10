@@ -1,5 +1,6 @@
 COMPOSE_FILE = ./docker-compose.yml
 DB_FILE = ./fastify/src/database/database.db
+LOG_FILE = ./logs/log.sh
 #ENV_FILE = .env
 
 all: build run
@@ -17,7 +18,7 @@ status:
 	docker-compose ps -a
 
 logs:
-	docker-compose logs -f
+	@docker-compose logs --tail=50 > $(LOG_FILE) &
 
 # will delete the whole database and it's contents
 cleanDB:
@@ -29,6 +30,9 @@ clean:
 	@docker-compose down --volumes
 	@docker stop $$(docker ps -qa) || true
 	@docker rm $$(docker ps -qa) || true
+	@if [ -f $(LOG_FILE) ]; then \
+		rm $(LOG_FILE); \
+	fi
 
 re: clean all
 

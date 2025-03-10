@@ -2,24 +2,28 @@ FROM node:20
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
 
-COPY tsconfig.json /app/tsconfig.json
+COPY conf/package.json /app/package.json
+COPY conf/package-lock.json /app/package-lock.json
 
-RUN npm install \
-	&& npm install better-sqlite3 \
-	&& npm install @fastify/formbody \
-	&& npm install fastify-favicon \
-	&& npm install @fastify/flash \
-	&& npm install @fastify/secure-session \
-	&& npm install -D typescript ts-node @types/node nodemon
+COPY conf/tsconfig.json /app/tsconfig.json
 
-RUN npm install --save-dev @types/node
+RUN npm install -g npm@11.2.0
 
+RUN npm install --prefix /app \
+	&& npm install -D typescript @types/node \
+	&& npm install -g tsx \
+	&& npm install @types/better-sqlite3 --save-dev \
+	&& npm install @types/fastify-static --save-dev \
+	&& npm install @types/ejs --save-dev
+	
 ENV NODE_ENV=production
 
 COPY . /app/
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]
+
+	#&& npm install @types/flash --save-dev \
+	#&& npm install @types/secure-session --save-dev \

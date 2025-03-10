@@ -13,7 +13,7 @@ import {deleteUser} from "../controllers/controls/delete.controller.js";
 import {editUser} from "../controllers/controls/editUser.controller.js";
 
 // utils
-import {dbChecker} from "../database/dbChecker.js";
+import {dbChecker} from "../database/dbChecker.ts";
 
 async function routes(fastify, options) {
 	// get
