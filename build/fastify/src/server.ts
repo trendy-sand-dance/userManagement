@@ -7,11 +7,11 @@ import fastifyStatic from '@fastify/static';
 
 import fastifyView from '@fastify/view';
 import path from 'path';
-import ejs from 'ejs';
+import ejs from '@types/ejs';
 const __dirname = import.meta.dirname;
 
 import routes from './routes/routes.ts';
-import dbConnector from './database/dbConnector.js';
+import dbConnector from './database/dbConnector.ts';
 
 const app = Fastify();
 

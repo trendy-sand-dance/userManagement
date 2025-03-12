@@ -1,10 +1,10 @@
 
-import Database from "better-sqlite3";
-import fs from "fs";
-import path from "node:path";
+import Database from '@types/better-sqlite3';
+import fs from '@types/fs';
+import path from 'node:path';
 
 // use to check whether database (file) already exists
-const databasePath = path.join(import.meta.dirname, "/database.db");
+const databasePath = path.join(import.meta.dirname, '/database.db');
 
 // -----------------------------------------------//
 // build new database table if not already exists
@@ -44,4 +44,4 @@ async function dbConnector(fastify, options) {
 };
 
 // default allows for custom name for importing
-export default (dbConnector);
+export default dbConnector;

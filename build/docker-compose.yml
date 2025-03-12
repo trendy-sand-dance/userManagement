@@ -7,7 +7,7 @@ services:
       - "3000:3000"
     volumes:
       - ./fastify/src:/app/src
-      - ./fastify/conf:/app/conf
-      - /app/conf/node_modules
+      - ./fastify/:/app/
+      - /app/node_modules
     working_dir: /app
     command: ["npm", "run", "dev"]
