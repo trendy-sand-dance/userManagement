@@ -1,37 +1,39 @@
+import { FastifyInstance} from 'fastify';
+
 // pages
-import {getRoot} from "../controllers/pages/root.controller.js";
-import {getLoginPage} from "../controllers/pages/loginPage.controller.js";
-import {getDashboard} from "../controllers/pages/dashboard.controller.js";
-import {getRegisterPage} from "../controllers/pages/registerPage.controller.js";
-import {getDeletePage} from "../controllers/pages/deletePage.controller.js";
-import {getEditPage} from "../controllers/pages/editUserPage.controller.js";
+import {getRoot} from "../controllers/pages/root.controller";
+import {getLoginPage} from "../controllers/pages/loginPage.controller";
+import {getDashboard} from "../controllers/pages/dashboard.controller";
+import {getRegisterPage} from "../controllers/pages/registerPage.controller";
+import {getDeletePage} from "../controllers/pages/deletePage.controller";
+import {getEditPage} from "../controllers/pages/editUserPage.controller";
 
 // controls
-import {loginUser} from "../controllers/controls/login.controller.js";
-import {registerUser} from "../controllers/controls/register.controller.js";
-import {deleteUser} from "../controllers/controls/delete.controller.js";
-import {editUser} from "../controllers/controls/editUser.controller.js";
+import {loginUser} from "../controllers/controls/login.controller";
+import {registerUser} from "../controllers/controls/register.controller";
+import {deleteUser} from "../controllers/controls/delete.controller";
+import {editUser} from "../controllers/controls/editUser.controller";
 
 // utils
-import {dbChecker} from "../database/dbChecker.ts";
+import {dbChecker} from "../database/dbChecker";
 
-async function routes(fastify, options) {
+async function routes(FastifyInstance) {
 	// get
-	fastify.get('/', getRoot)
-	fastify.get('/login', getLoginPage)
-	fastify.get('/dashboard', getDashboard)
-	fastify.get('/register', getRegisterPage)
-	fastify.get('/delete', getDeletePage)
-	fastify.get('/edit', getEditPage)
+	FastifyInstance.get('/', getRoot)
+	FastifyInstance.get('/login', getLoginPage)
+	FastifyInstance.get('/dashboard', getDashboard)
+	FastifyInstance.get('/register', getRegisterPage)
+	FastifyInstance.get('/delete', getDeletePage)
+	FastifyInstance.get('/edit', getEditPage)
 
 	// post
-	fastify.post('/login', loginUser)
-	fastify.post('/register', registerUser)
-	fastify.post('/delete', deleteUser)
-	fastify.post('/edit', editUser)
+	FastifyInstance.post('/login', loginUser)
+	FastifyInstance.post('/register', registerUser)
+	FastifyInstance.post('/delete', deleteUser)
+	FastifyInstance.post('/edit', editUser)
 
 	// utils
-	fastify.get('/dbChecker', dbChecker)
+	FastifyInstance.get('/dbChecker', dbChecker)
 };
 
 export default routes;

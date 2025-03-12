@@ -6,10 +6,10 @@ import routes from './routes/routes';
 //import fastifyFavicon from "fastify-favicon";
 //import fastifyStatic from '@fastify/static';
 
-//import path from 'path';
-//import view from 'view';
-//import ejs from 'ejs';
-//const __dirname = import.meta.dirname;
+import path from 'path';
+import view from '@fastify/view';
+import ejs from 'ejs';
+const __dirname = import.meta.dirname;
 
 //declare module 'fastify' {
 //    interface FastifyInstance {
@@ -36,13 +36,13 @@ const HOST = '0.0.0.0';
 //	prefix: "/public/",
 //});
 
-//app.register(view, {
-//	engine: {
-//		ejs: ejs,
-//	},
-//	root: path.join(__dirname, "views"),
-//	viewExt: "ejs",
-//});
+app.register(view, {
+	engine: {
+		ejs: ejs,
+	},
+	root: path.join(__dirname, "views"),
+	viewExt: "ejs",
+});
 
 // run server
 //app.listen({ port: PORT, host: HOST }).then(() => {

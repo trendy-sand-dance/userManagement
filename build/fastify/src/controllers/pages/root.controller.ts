@@ -5,5 +5,5 @@ export async function getRoot(request: FastifyRequest, reply: FastifyReply): Pro
 	//const query = `SELECT * FROM userTable`;
 	//const userTable = db.prepare(query).all();
 	//return reply.view("index", { title: "Home", userTable });
-	return reply.send("helllooooo");
+	return reply.send("helllooooo index");
 };
