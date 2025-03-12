@@ -3,7 +3,7 @@ FROM node:20
 WORKDIR /app
 
 COPY package.json /app/package.json
-#COPY package-lock.json /app/package-lock.json
+COPY package-lock.json /app/package-lock.json
 
 COPY tsconfig.json /app/tsconfig.json
 
@@ -14,10 +14,10 @@ RUN npm install --prefix /app \
 	&& npm install @types/node \
 	&& npm install @fastify/static \
 	&& npm install @fastify/formbody \
-	&& npm install @fastify/view \
+	&& npm install view \
 	&& npm install fastify-favicon \
-	&& npm install @types/ejs \
-	&& npm install @types/better-sqlite3
+	&& npm install ejs \
+	&& npm install better-sqlite3
 	
 ENV NODE_ENV=production
 
