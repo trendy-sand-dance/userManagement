@@ -42,3 +42,13 @@
 3) do we need/want a name ? or just username, password? email?
 4) tsx / pnpm / ts-node + nodemon.. what are we actually all using?
 
+
+
+➜  build git:(main) ✗ docker exec -it fastify sh
+# npm list
+fastify@1.0.0 /app
++-- @fastify/view@10.0.2
++-- better-sqlite3@11.8.1
++-- ejs@3.1.10
++-- fastify-favicon@5.0.0
+`-- fastify@5.2.1

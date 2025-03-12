@@ -10,13 +10,16 @@ COPY conf/tsconfig.json /app/tsconfig.json
 #RUN npm install -g npm@11.2.0
 
 RUN npm install --prefix /app \
-	&& npm install -D typescript @types/node \
+	&& npm install -D typescript  \
+	&& npm install @types/node \
 	&& npm install -g tsx \
 	&& npm install fastify \
 	&& npm install @types/better-sqlite3 --save-dev \
-	&& npm install @types/fastify-static --save-dev \
 	&& npm install @types/ejs --save-dev \
-	&& npm install @fastify/formbody --save-dev
+	&& npm install @fastify/static --save-dev \
+	&& npm install @fastify/formbody --save-dev \
+	&& npm install fastify-favicon \
+	&& npm install ejs
 	
 ENV NODE_ENV=production
 
