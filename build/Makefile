@@ -28,8 +28,6 @@ cleanDB:
 
 clean:
 	@docker-compose down --volumes
-	@docker stop $$(docker ps -qa) || true
-	@docker rm $$(docker ps -qa) || true
 	@if [ -f $(LOG_FILE) ]; then \
 		rm $(LOG_FILE); \
 	fi

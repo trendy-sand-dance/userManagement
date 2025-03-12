@@ -14,6 +14,7 @@ RUN npm install --prefix /app \
 	&& npm install @types/node \
 	&& npm install @fastify/static \
 	&& npm install @fastify/formbody \
+	&& npm install @fastify/view \
 	&& npm install fastify-favicon \
 	&& npm install @types/ejs \
 	&& npm install @types/better-sqlite3

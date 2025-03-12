@@ -1,25 +1,24 @@
 // imports
 //import Fastify, { FastifyInstance, FastifyReply, FastifyRequest} from "fastify";
 import Fastify from 'fastify';
+import routes from './routes/routes.ts';
+import dbConnector from './database/dbConnector.ts';
 import formbody from '@fastify/formbody';
 import fastifyFavicon from "fastify-favicon";
 import fastifyStatic from '@fastify/static';
 
-import fastifyView from '@fastify/view';
 import path from 'path';
+import fastifyView from '@fastify/view';
 import ejs from '@types/ejs';
 const __dirname = import.meta.dirname;
-
-import routes from './routes/routes.ts';
-import dbConnector from './database/dbConnector.ts';
 
 const app = Fastify();
 
 // initialisation
-app.register(formbody);
 app.register(routes);
 app.register(dbConnector);
 console.log("Database connected and registered");
+app.register(formbody);
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
