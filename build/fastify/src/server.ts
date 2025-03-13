@@ -16,9 +16,9 @@ const __dirname = import.meta.dirname;
 const app: FastifyInstance = Fastify();
 
 // initialisation
-app.register(routes);
 app.register(dbConnector);
 console.log("Database connected and registered");
+app.register(routes);
 const PORT = 3000;
 const HOST = '0.0.0.0';
 

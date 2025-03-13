@@ -24,6 +24,3 @@ COPY . /app/
 EXPOSE 3000
 
 CMD ["npm", "run", "start"]
-
-	#&& npm install static \
-	#&& npm install formbody \
