@@ -1,4 +1,4 @@
-import { FastifyInstance} from 'fastify';
+import { FastifyInstance } from 'fastify';
 
 // pages
 import {getRoot} from "../controllers/pages/root.controller";

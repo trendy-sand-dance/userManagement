@@ -1,7 +1,6 @@
 import { FastifyRequest, FastifyReply } from 'fastify';
 
-export async function dbChecker(
-	request: FastifyRequest, reply: FastifyReply): Promise<void> {
+export async function dbChecker(request: FastifyRequest, reply: FastifyReply) {
 		console.log("DB instance: ", request.server.db);
 		if (!request.server.db) {
 			return reply.status(500).send({error: "database not gooci"});

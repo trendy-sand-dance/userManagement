@@ -18,7 +18,7 @@ status:
 	docker-compose ps -a
 
 logs:
-	@docker-compose logs --tail=50 > $(LOG_FILE) &
+	@docker-compose logs --tail=100 > $(LOG_FILE) &
 
 # will delete the whole database and it's contents
 cleanDB:
