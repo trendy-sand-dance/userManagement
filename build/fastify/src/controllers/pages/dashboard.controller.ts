@@ -6,4 +6,4 @@ export async function getDashboard(request: FastifyRequest, reply: FastifyReply)
 	//const userTable = db.prepare(query).all();
 	//return reply.view("dashboard", { title: "Dashboard", userTable });
 	return reply.send("dashboard page");
-} 
+}

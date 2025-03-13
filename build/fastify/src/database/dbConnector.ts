@@ -1,4 +1,4 @@
-import { Database } from 'better-sqlite3'; 
+import Database from 'better-sqlite3'; 
 import fs from 'fs';
 import path from 'node:path';
 import { FastifyInstance, FastifyPluginOptions } from 'fastify';
@@ -12,7 +12,7 @@ const databasePath = path.join(new URL('.', import.meta.url).pathname, 'database
 // create database object whether db exists already or not, to use in controller functions
 // -----------------------------------------------//
 async function dbConnector(fastify: FastifyInstance, options: FastifyPluginOptions): Promise<void> {
-	let db: Database;
+	let db;
 
 	if (fs.existsSync(databasePath)) {
 		console.log("Database already exists at: ", databasePath);
