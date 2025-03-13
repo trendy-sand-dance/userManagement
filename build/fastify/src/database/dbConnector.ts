@@ -36,6 +36,7 @@ async function dbConnector(fastify: FastifyInstance, options: FastifyPluginOptio
 		console.log("Database created successfully!");
 	}
 	fastify.decorate("db", db);
+	console.log("db attatched to fastify");
 	fastify.addHook("onClose", (fastify, done) => {
 		if (db) {
 			db.close();

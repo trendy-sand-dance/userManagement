@@ -1,9 +1,11 @@
 // imports
 import Fastify, { FastifyInstance, FastifyReply, FastifyRequest} from "fastify";
-import routes from './routes/routes';
 import dbConnector from './database/dbConnector';
-//import formbody from 'formbody';
+import routes from './routes/routes';
 import fastifyFavicon from "fastify-favicon";
+
+// not yet worky
+//import formbody from 'formbody';
 //import fastifyStatic from 'static';
 
 import path from 'path';
@@ -11,25 +13,20 @@ import view from '@fastify/view';
 import ejs from 'ejs';
 const __dirname = import.meta.dirname;
 
-//declare module 'fastify' {
-//    interface FastifyInstance {
-//        db: any; // Assuming 'db' is attached to the server instance
-//    }
-//}
-
 const app: FastifyInstance = Fastify();
 
 // initialisation
 app.register(routes);
 app.register(dbConnector);
 console.log("Database connected and registered");
-//app.register(formbody);
 const PORT = 3000;
 const HOST = '0.0.0.0';
 
 app.register(fastifyFavicon, {
 	path: path.join(__dirname, 'public', '') // Path to your favicon file
-  });
+});
+
+//app.register(formbody);
 
 //app.register(fastifyStatic, {
 //	root: path.join(__dirname, "public"),
