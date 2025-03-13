@@ -13,8 +13,6 @@ RUN npm install --prefix /app \
 	&& npm install fastify \
 	&& npm install @types/node \
 	&& npm install better-sqlite3 \
-	&& npm install static \
-	&& npm install formbody \
 	&& npm install view \
 	&& npm install fastify-favicon \
 	&& npm install ejs
@@ -26,3 +24,6 @@ COPY . /app/
 EXPOSE 3000
 
 CMD ["npm", "run", "start"]
+
+	#&& npm install static \
+	#&& npm install formbody \
