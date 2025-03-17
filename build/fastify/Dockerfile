@@ -11,11 +11,13 @@ RUN npm install --prefix /app \
 	&& npm install -D typescript  \
 	&& npm install -g tsx \
 	&& npm install fastify \
-	&& npm install @types/node \
-	&& npm install better-sqlite3 \
-	&& npm install view \
-	&& npm install fastify-favicon \
-	&& npm install ejs
+	&& npm install @types/node
+	#&& npm install @types/better-sqlite3 \
+	#&& npm install better-sqlite3 \
+	#&& npm install view \
+	#&& npm install fastify-favicon \
+	#&& npm install @fastify/formbody \
+	#&& npm install ejs
 	
 ENV NODE_ENV=production
 

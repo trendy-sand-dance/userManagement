@@ -28,6 +28,8 @@ cleanDB:
 
 clean:
 	@docker-compose down --volumes
+	docker system prune -a
+	docker volume prune -a
 	@if [ -f $(LOG_FILE) ]; then \
 		rm $(LOG_FILE); \
 	fi

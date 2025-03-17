@@ -4,10 +4,11 @@ import Fastify from "fastify";
 import dbConnector from './database/dbConnector';
 import routes from './routes/routes';
 import fastifyFavicon from "fastify-favicon";
+import fastifyFormbody from "@fastify/formbody";
 
 import path from 'path';
 import view from '@fastify/view';
-import ejs from 'ejs';
+import ejs from '@types/ejs';
 const __dirname = import.meta.dirname;
 
 const app =  Fastify();

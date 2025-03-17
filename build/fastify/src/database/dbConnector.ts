@@ -1,4 +1,4 @@
-import Database from 'better-sqlite3'; 
+import Database from '@types/better-sqlite3'; 
 import fs from 'fs';
 import path from 'node:path';
 import { FastifyInstance } from 'fastify';
